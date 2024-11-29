@@ -31,6 +31,6 @@ steps:
 - name: Deploy no EC2 -AWS
   run: |
         echo "Conectando no EC2"
-        echo "${{secrets.AWS_KEY_SALAG}}" > private_key && chmod 600 private_key
+        echo "${{secrets.sarah_secreta}}" > private_key && chmod 600 private_key
         ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-3-234-186-48.compute-1.amazonaws.com "
               cd sub_sarah/;git pull;./executar.sh"
